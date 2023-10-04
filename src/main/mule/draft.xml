@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:amqp="http://www.mulesoft.org/schema/mule/amqp"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/amqp http://www.mulesoft.org/schema/mule/amqp/current/mule-amqp.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+<!-- [STUDIO:"valid-orders-listener"]	<flow name="valid-orders-listener" doc:id="c4644bc0-fca0-4adf-8903-392be92274a0" >
+		<amqp:listener doc:name="Listener" doc:id="320577a0-9479-4624-881f-615046a0542d" config-ref="amqp-config" queueName="valid.salesorders" />
+		<set-variable value="#['SUCCESS'&#93;" doc:name="status to SUCCESS" doc:id="7090d663-86cd-4720-9dc7-e092331d5cb5" variableName="status" />
+		<logger level="INFO" doc:name="Logger" doc:id="35cf6e86-ce2c-4ab9-b0ad-9a8471a2ed2a" message="#[payload&#93;" />
+	</flow> [STUDIO] -->
+<!-- [STUDIO:"get-sales-order"]	<flow name="get-sales-order" doc:id="424add2e-3803-4429-a11c-5f0560776c94" >
+		<http:listener doc:name="Listener" doc:id="921c9db3-b02e-4f44-a613-0aea61f795ea" config-ref="http-listener-config" path="/consume" />
+		<amqp:consume doc:name="Consume" doc:id="6ff76ab3-112e-4443-af38-75b4f74c500a" config-ref="amqp-config" queueName="valid.salesorders" />
+		<logger level="INFO" doc:name="payload" doc:id="ee7ac1ab-d611-4b40-808f-a7c86c1f4864" message="#[payload&#93;" />
+	</flow> [STUDIO] -->
+</mule>

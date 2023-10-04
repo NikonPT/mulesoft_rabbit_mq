@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:amqp="http://www.mulesoft.org/schema/mule/amqp" xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/amqp http://www.mulesoft.org/schema/mule/amqp/current/mule-amqp.xsd">
+	<http:listener-config name="http-listener-config" doc:name="HTTP Listener config" doc:id="6213cd08-c345-44c4-99be-7873277314e0" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<amqp:config name="amqp-config" doc:name="AMQP Config" doc:id="a2ed671c-25f4-48d9-a89b-3094c03dde8e" sendCorrelationId="ALWAYS">
+		<amqp:connection host="localhost" port="5672" username="guest" password="guest"/>
+	</amqp:config>
+</mule>

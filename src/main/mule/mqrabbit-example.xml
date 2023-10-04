@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:amqp="http://www.mulesoft.org/schema/mule/amqp"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/amqp http://www.mulesoft.org/schema/mule/amqp/current/mule-amqp.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<flow name="post-sales-order" doc:id="61bf9252-4e5f-4691-a6f7-ab6c9505dd8d" >
+		<http:listener doc:name="Listener" doc:id="8aaac7bb-31c6-4db1-9be9-f4b9a566ac90" config-ref="http-listener-config" path="/publish" />
+		<logger level="INFO" doc:name="payload" doc:id="8c467119-4bc2-4d2e-bbe2-276a0663a562" message="#[payload]" />
+		<amqp:publish doc:name="Publish" doc:id="7e5f5d4a-7530-41e2-866b-61a2322ef045" config-ref="amqp-config" exchangeName="salesorders.exchange" >
+			<amqp:routing-keys >
+			</amqp:routing-keys>
+		</amqp:publish>
+	</flow>
+</mule>
